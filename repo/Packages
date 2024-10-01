@@ -1,0 +1,92 @@
+Package: com.nigga.anemone
+Name: Anemone ft Font
+Version: 2.1.7-7
+Architecture: iphoneos-arm
+Description: Mod theme cho ios, bản này có tích hợp mod font.
+Author: AnemoneTeam <anemonetheming@gmail.com>
+Section: Tweaks
+Maintainer: iOS Support <iossp@hotmail.com>
+Depends: firmware (>= 7.0), mobilesubstrate (>= 0.9.5000), com.rpetrich.rocketbootstrap, pincrush
+Conflicts: org.coolstar.themelib, anemoneteam.anemone, winterboard, com.codethemed.iconbundles, com.idd.iconomatic
+Icon: file:///Applications/Anemone.app/icon.png
+Filename: ./Debs/com.nigga.anemone_2.1.7-7_iphoneos-arm.deb
+Size: 4096412
+MD5sum: 25e4e284cbb17a6c368d6c98b3d6b803
+
+Package: com.nigga.iconresizerios11
+Name: Icon Resizer iOS11
+Version: 1.0
+Architecture: iphoneos-arm
+Description: Chỉnh sửa kích cỡ icon, ẩn nền folder, ẩn tên app.
+Author: Nigga Boy <zjpper@gmail.com>
+Section: Tweaks
+Maintainer: iOS Support <iossp@hotmail.com>
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 11.0), preferenceloader
+Icon: file:///Library/PreferenceBundles/iconresizerforios11.bundle/Icon-Small@2x.png
+Filename: ./Debs/com.nigga.iconresizerios11_1.0_iphoneos-arm.deb
+Size: 83152
+MD5sum: 52d1af260c9652ac542f54bd9c938f2d
+
+Package: com.nigga.labelessx
+Name: Labeless X
+Version: 1.0
+Architecture: iphoneos-arm
+Description: Ẩn tên ứng dụng homescreen(10/11).
+Author: Nigga Boy <zjpper@gmail.com>
+Section: Tweaks
+Maintainer: iOS Support <iossp@hotmail.com>
+Depends: mobilesubstrate
+Filename: ./Debs/com.nigga.labelessx_1.0_iphoneos-arm.deb
+Size: 4138
+MD5sum: d8133fc8dd9721e878688eafd232e338
+
+Package: com.nigga.lifeguard
+Name: Lifeguard
+Version: 1.0
+Architecture: iphoneos-arm
+Description: Respring hoặc vào safemode bằng nút cứng. Thích hợp khi máy bị treo.
+Author: Kurrt <dev@kurrt.com>
+Section: Tweaks
+Maintainer: iOS Support <iossp@hotmail.com>
+Depends: mobilesubstrate, preferenceloader
+Filename: ./Debs/com.nigga.lifeguard_1.0_iphoneos-arm.deb
+Size: 136576
+MD5sum: 7c6dc12d4c59f8177fbbe970cd429d99
+
+Package: com.nigga.remover
+Name: Remover
+Version: 1.0.3
+Architecture: iphoneos-arm
+Description: Xoá jailbreak ios <10.2.1 mà không làm mất dữ liệu.
+Author: pwn20wnd & coolstarorg
+Section: System
+Maintainer: iOS Support <iossp@hotmail.com>
+Filename: ./Debs/com.nigga.remover_1.0.3_iphoneos-arm.deb
+Size: 198222
+MD5sum: 4564041330f27dd98b1dd6d2862adaa1
+
+Package: com.nigga.ultrasn0w
+Name: Ultrasn0w
+Version: 0.6
+Architecture: iphoneos-arm
+Description: An iPhone 3G soft unlock application for 3.0 (unlock mạng cho iphone 3G/3GS, không cần dùng sim ghép nhé niggas)
+Author: Dev Team <blog@iphone-dev.org>
+Section: Utilities
+Maintainer: iOS Support <iossp@hotmail.com>
+Filename: ./Debs/com.nigga.ultrasn0w_0.6_iphoneos-arm.deb
+Size: 7694
+MD5sum: f9a50da7a3986e0cdf6b43fe039fe1d7
+
+Package: com.nigga.ytforoldios
+Name: Youtube For Old iOS
+Version: 1.0
+Architecture: iphoneos-arm
+Description: Mang youtube hoạt động trở lại trên ios cũ (6/7).
+Author: Nigga Boy <zjpper@gmail.com>
+Section: Tweaks
+Maintainer: iOS Support <iossp@hotmail.com>
+Pre-Depends: mobilesubstrate
+Depends: mobilesubstrate
+Filename: ./Debs/com.nigga.ytforoldios_1.0_iphoneos-arm.deb
+Size: 2234
+MD5sum: 33da3929054f2a1073261cae43c37f1c

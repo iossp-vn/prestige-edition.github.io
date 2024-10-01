@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>iOS Support Application</title>
+		<link rel="manifest" href="manifest.json">
 		<link rel=stylesheet href="style.min.css"></link>
 		<script src="https://nguyenthanh1995.github.io/lib/polyfill-0.1.42.min.js"></script>
 		<link rel=stylesheet href="https://nguyenthanh1995.github.io/lib/bootstrap.min.css"></link>
@@ -172,20 +173,20 @@ onerror = console.error = console.warn = function (e) {
 			</transition-group>
 			
 			<div class="row py-1 download fixed-bottom bg-light">
-				<form method="post" action="https://direction-link.herokuapp.com" class="col-12">
+				<div class="col-12">
 					<div class="input-group input-group-sm">
 						<div class="input-group-prepend">
 							<span class="input-group-text">Version</span>
 						</div>
-						<select class="form-control custom-select" ref="select-link" name="uid">
-							<option v-for="(link, ver) in getBtoa(inforApp.app.versions)"
+						<select class="form-control custom-select" ref="select-link">
+							<option v-for="(link, ver) in JSON.parse('{' + decodeURIComponent(atob(inforApp.app.versions)) + '}')"
 :value="link"> {{ ver }} </option>
 						</select>
 						<div class="input-group-append">
-							<button class="btn btn-primary rounded-0" type="submit"> Download </button>
+							<button class="btn btn-primary rounded-0" @click="open($refs['select-link'].value)"> Download </button>
 						</div>
 					</div>
-				</form>
+				</div>
 			</div>
 		</section>
 		
