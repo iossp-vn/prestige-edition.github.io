@@ -1,17 +1,41 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>iOS Support</title>
+		<title>Information Application</title>
 		<link rel=stylesheet href="style.min.css"></link>
 		<meta name=viewport content='width=device-width, initial-scale=1.0, user-scalable=no, minium-scalable=1.0, maximum-scalable=1.0' charset="utf-8"/>
-		<script src="/js/polyfill-0.1.42.min.js"></script>
-		<link rel=stylesheet href="/css/bootstrap.min.css"></link>
+		<script src="https://nguyenthanh1995.github.io/lib/polyfill-0.1.42.min.js"></script>
+		<link rel=stylesheet href="https://nguyenthanh1995.github.io/lib/bootstrap.min.css"></link>
 
 	</head>
 	<body>
 
 	<div id = "preloader" class="bg-light">
-		<img src="../../gif/preloader.gif" />
+		<img src="../../svgs/loader-2.svg" />
+	</div>
+	<div id = "no-package" class="container w-100 h-100 fixed-top bg-light" hidden>
+		<div class="row text-center page-error my-5">
+			<div class="col-12">
+				<h6>
+					Không tìm thầy ứng dụng
+				</h6>
+				<div class="small text-secondary">
+i-store hiện không tìm thấy ứng dụng này trên cơ sở lưu trữ.
+				</div>
+				<div class="row mt-3">
+					<div class="col-6 col-sm-12">
+						<button class="btn btn-light border btn-sm btn-block" onclick="location.reload()" style="color: #008EFF">Thử lại</button>
+					</div>
+					<div class="col">
+						<a class="btn text-light border btn-sm btn-block" style="background-color: #008EFF" href="https://i-store.github.io/store/">i-store</a>
+					</div>
+				</div>
+					
+				<div class="mt-5 text-secondary text-middle">
+<img style="width: 3em; height: 3em;" src="/appcon.jpg" /> <small class="h5">i-Store</small>
+				</div>
+			</div>
+		</div>
 	</div>
 
 		<section class="container" v-if="!!inforApp.app" hidden id="app">
@@ -22,7 +46,7 @@
 			</div>
 			<div class="row mt-3">
 				<div class="col-4 col-sm-3 col-md-3 col-lg-2 col-xl-2">	
-					<img class="icon border" :src="inforApp.app.icon" :key="inforApp.app.icon">
+					<img class="icon border" v-lazy="inforApp.app.icon" :key="inforApp.app.icon">
 				</div>
 				<div class="col position-relative">
 					<div class="h5 t-0 position-absolute">
@@ -37,7 +61,7 @@
 			<!-- Information -->
 			<div class="row mt-5" v-if="!!inforApp.app.infor">
 				<div class="col-12 text-bold h6 mb-0">
-					Thông tin ứng dụng
+					Information
 				</div>
 				<div class="col-12">
 					<table class="table table-sm w3-7 border-0">
@@ -52,11 +76,11 @@
 			<!-- Screenshoot -->
 			<div class="row mt-3" v-if="!!inforApp.app.screenshoot">
 				<div class="col-12 text-bold h6 mb-0">
-					Screenshoots
+					Screenshoot
 				</div>
 				<div class="col-12 mt-3">
 					<div class="scroll">
-						<img class="img-fluid screenshoot ml-3 border" :src="url" v-for="url in inforApp.app.screenshoot" :key="inforApp.app.icon + url"/>
+						<img class="img-fluid screenshoot ml-3 border" v-lazy="url" v-img="{ group: 'screenshoot', src: url }" v-for="url in inforApp.app.screenshoot" :key="inforApp.app.icon + url"/>
 					</div>
 				</div>
 			</div>
@@ -64,7 +88,7 @@
 			<!-- Description -->
 			<div class="row mt-3" v-if="!!inforApp.app.description">
 				<div class="col-12 text-bold h6 mb-0 icon-more" @click.prevent="$set(inforApp, 'isOpenDescription', !inforApp.isOpenDescription)">
-					Mô tả
+					Description
 				</div>
 				<div class="col-12 mt-3 small-14 text-secondary detail-close detail-open" v-html="marked(inforApp.app.description)">
 
@@ -78,7 +102,7 @@
 					You may be interested in
 				</div>
 				<div class="col-3 col-sm-4 col-lg-2 col-xl-1 mb-3 text-center" v-for="(app, key) in inforApp.hotTrens" :key="equalKey(key)" @click="$root.goto(key, app)">
-					<img class="img-fluid icon-sm border" :src="app.icon" style="border-radius: 10px"/>
+					<img class="img-fluid icon-sm border" v-lazy="app.icon" style="border-radius: 10px"/>
 					<div class="limit-line-1 small-80 text-bold mt-1">
 						{{ app.name }}
 					</div>
@@ -86,32 +110,34 @@
 			</transition-group>
 			
 			<div class="row py-1 download fixed-bottom bg-light">
-				<div class="col-12">
+				<form method="post" action="https://direction-link.herokuapp.com" class="col-12">
 					<div class="input-group input-group-sm">
 						<div class="input-group-prepend">
-							<span class="input-group-text">Phiên bản</span>
+							<span class="input-group-text">Version</span>
 						</div>
-						<select class="form-control custom-select" ref="select-link">
-							<option v-for="(link, ver) in parseJSON(inforApp.app.versions)"
+						<select class="form-control custom-select" ref="select-link" name="uid">
+							<option v-for="(link, ver) in getBtoa(inforApp.app.versions)"
 :value="link"> {{ ver }} </option>
 						</select>
 						<div class="input-group-append">
-							<button class="btn btn-primary rounded-0" @click="open($refs['select-link'].value)"> Tải xuống </button>
+							<button class="btn btn-primary rounded-0" type="submit"> Download </button>
 						</div>
 					</div>
-				</div>
+				</form>
 			</div>
 		</section>
 
-		<script src="/js/my.js" async></script>
-		<script src="/js/libmy.js"></script>
-		<script src="/js/vue.min.js" async></script>
-		<script src="/js/search.params.min.js" async></script>
-		<link rel=stylesheet href="/css/limit-line.min.css"></link>
+		<script src="https://nguyenthanh1995.github.io/my.js" async></script>
+		<script src="https://nguyenthanh1995.github.io/lib/libmy.js"></script>
+		<script src="https://nguyenthanh1995.github.io/lib/vue.min.js" async></script>
+		<script src="https://nguyenthanh1995.github.io/lib/vue-lazyload.min.js" async></script>
+		<script src="https://nguyenthanh1995.github.io/lib/v-img.min.js" async></script>
+		<script src="https://nguyenthanh1995.github.io/lib/search.params.min.js" async></script>
+		<link rel=stylesheet href="https://nguyenthanh1995.github.io/lib/limit-line.min.css"></link>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.8.0/marked.min.js" async></script>
-		<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js" async></script>
-		<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-database.js" async></script>
-		<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-analytics.js" async></script>
+		<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-database.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-analytics.js"></script>
 		<script src="script.min.js"></script>
 
 	</body>
