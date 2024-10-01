@@ -5,24 +5,10 @@
 	<key>ConsentText</key>
 	<dict>
 		<key>default</key>
-		<string>Cảm ơn bạn đã cài đặt ứng dụng iOS Support! Bây giờ bạn có thể mở nó từ màn hình chính của bạn.  Đối với bất kỳ trợ giúp, xin vui lòng liên hệ với chúng tôi trên Twitter (@NguyenThanhDev).</string>
+		<string>Cảm ơn bạn đã cài đặt ứng dụng iOS Support! Bây giờ bạn có thể mở nó từ màn hình chính của bạn. Đối với bất kỳ trợ giúp, xin vui lòng liên hệ với tôi trên Facebook (https://facebook.com/chunhwa.00).</string>
 	</dict>
 	<key>PayloadContent</key>
-	<array><!--
-		<dict>
-			<key>PayloadDescription</key>
-			<string>Định cấu hình tên miền được quản lý</string>
-			<key>PayloadDisplayName</key>
-			<string>Domains</string>
-			<key>PayloadIdentifier</key>
-			<string>git.shin.ios-support</string>
-			<key>PayloadType</key>
-			<string>com.apple.domains</string>
-			<key>PayloadUUID</key>
-			<string>E26915C1-88F9-48A8-9551-CF8C43D3BB82AA</string>
-			<key>PayloadVersion</key>
-			<integer>1</integer>
-		</dict>-->
+	<array>
 		<dict>
 			<key>FullScreen</key>
 			<true/>
@@ -35,7 +21,7 @@
 			<key>Label</key>
 			<string>iOS Support</string>
 			<key>PayloadDescription</key>
-			<string>Định cấu hình cài đặt cho một clip web (iOS Support).</string>
+			<string>Định cấu hình cài đặt cho một Web Clip (iOS Support).</string>
 			<key>PayloadDisplayName</key>
 			<string>Web Clip</string>
 			<key>PayloadIdentifier</key>
@@ -49,15 +35,15 @@
 			<key>Precomposed</key>
 			<false/>
 			<key>URL</key>
-			<string>https://i-store.github.io/store?viewer=webclip</string>
+			<string>https://iossp.github.io/store?viewer=webclip</string>
 		</dict>
 	</array>
 	<key>PayloadDescription</key>
-	<string>Hồ sơ cho ứng dụng iOS Support. Cửa hàng ứng dụng bên thứ ba tốt nhất để cài đặt các ứng dụng phiên bản cũ tuyệt vời trên thiết bị iOS của bạn.</string>
+	<string>Hồ sơ cho ứng dụng iOS Support. Chợ ứng dụng bên thứ ba tốt nhất để cài đặt các ứng dụng phiên bản cũ tuyệt vời trên thiết bị iOS của bạn.</string>
 	<key>PayloadDisplayName</key>
-	<string>iOS Support Application</string>
+	<string>Mọt </string>
 	<key>PayloadIdentifier</key>
-	<string>git.shin.ios-support</string>
+	<string>git.iossp.ios-support</string>
 	<key>PayloadOrganization</key>
 	<string>iOS Support</string>
 	<key>PayloadRemovalDisallowed</key>
@@ -67,6 +53,6 @@
 	<key>PayloadUUID</key>
 	<string>4B798B44-7800-4C90-A1E4-4117674705C9AF</string>
 	<key>PayloadVersion</key>
-	<integer>2</integer>
+	<integer>1</integer>
 </dict>
 </plist>

@@ -2,7 +2,7 @@ Origin: Mọt 
 Label: iOS Support
 Suite: stable
 Version: 1.0
-Codename: niggaboy
+Codename: iOSSP
 Architectures: iphoneos-arm
 Components: main
-Description: Phải có làm thì mới có ăn. Không làm mà muốn có ăn chỉ có ăn shit, ăn dickhead.
+Description: iOS Support - Support for Old iOS.

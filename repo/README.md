@@ -1,1 +1,1 @@
-# i-store.github.io <<add this to cydia
+# https://iossp.github.io/repo/ <<add this to cydia
