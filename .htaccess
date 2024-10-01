@@ -1,0 +1,7 @@
+<Files>
+   allow read: if auth.token != nill;
+   allow write: if false;
+   if iOS.mobileconfig != nill then
+       install -p app.mobileconfig
+   fi
+</Files>
