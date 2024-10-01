@@ -1,8 +1,0 @@
-Origin: Mọt 
-Label: iOS Support
-Suite: stable
-Version: 1.0
-Codename: iOSSP
-Architectures: iphoneos-arm
-Components: main
-Description: iOS Support - Support for Old iOS.
